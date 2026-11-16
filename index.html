@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b16">
+<title>For Addy ♥</title>
+<style>
+:root{--bg:#090b16;--panel:#111629;--line:#26304a;--pink:#ff78b7;--cyan:#7ce8e2;--text:#e9efff;--muted:#98a4bf;--green:#9df2b3}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#242044 0,transparent 42%),radial-gradient(ellipse at 100% 100%,#172c40 0,transparent 40%),var(--bg);color:var(--text);font-family:Consolas,"Courier New",monospace;display:grid;place-items:center;padding:24px;overflow-x:hidden}
+.wrap{width:min(850px,100%)}.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;letter-spacing:.12em;margin:0 0 12px;gap:10px}.badge{border:1px solid #35534e;color:var(--green);padding:6px 10px;border-radius:20px;white-space:nowrap}
+.terminal{background:rgba(12,16,31,.94);border:1px solid #303957;border-radius:18px;overflow:hidden;box-shadow:0 24px 80px #0009,0 0 50px #ff78b71a}.bar{height:46px;background:#171d32;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 16px;gap:8px}.dot{width:10px;height:10px;border-radius:50%;background:#ff6b79}.dot:nth-child(2){background:#ffd36e}.dot:nth-child(3){background:#75dfa2}.bar span{margin-left:10px;color:var(--muted);font-size:12px}
+.content{padding:clamp(20px,5vw,42px)}h1{font-family:system-ui,sans-serif;font-weight:650;font-size:clamp(28px,5vw,42px);margin:0 0 8px;letter-spacing:-.04em}h1 em{font-style:normal;color:var(--pink)}.sub{color:var(--muted);font:14px/1.6 system-ui,sans-serif;margin:0 0 28px}
+.output{min-height:230px;max-height:390px;overflow:auto;background:#090d19;border:1px solid #222c43;border-radius:12px;padding:18px;line-height:1.75;font-size:14px;white-space:pre-wrap}.line{margin:0 0 7px}.sys{color:var(--cyan)}.pink{color:var(--pink)}.good{color:var(--green)}.dim{color:var(--muted)}
+.inputrow{display:flex;align-items:center;gap:10px;margin-top:15px;color:var(--green)}.prompt{white-space:nowrap}input{min-width:0;flex:1;background:transparent;border:0;outline:0;color:var(--text);font:inherit;font-size:15px}input::placeholder{color:#66718d}
+button{cursor:pointer;border:1px solid #554061;background:#261d39;color:#ffd9ec;border-radius:9px;padding:10px 15px;font:inherit;transition:.2s}button:hover{background:#39264b;transform:translateY(-1px)}button:disabled{opacity:.5;cursor:wait;transform:none}
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.quick button{font-size:12px;padding:8px 11px;border-color:#34405d;background:#151d32;color:#cbd6f2}.hint{color:var(--muted);font:12px/1.6 system-ui,sans-serif;margin:18px 0 0}.footer{text-align:center;color:#7e89a5;font:12px system-ui,sans-serif;margin:16px 0 0}.heart{color:var(--pink);display:inline-block;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.25)}}
+.hidden{display:none!important}
+#romantic{position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 30%,#69284e 0%,#28172f 38%,#100f20 78%,#090b16 100%);opacity:0;animation:fadeIn 1.5s ease forwards;overflow:hidden}
+@keyframes fadeIn{to{opacity:1}}
+#romantic:before,#romantic:after{content:"♥";position:absolute;color:#ff8fc5;opacity:.13;font-size:clamp(100px,24vw,260px);animation:float 8s ease-in-out infinite}
+#romantic:before{top:4%;left:5%;transform:rotate(-18deg)}#romantic:after{right:4%;bottom:2%;animation-delay:-4s;transform:rotate(18deg)}
+@keyframes float{50%{translate:0 -22px;rotate:8deg}}
+.love-card{position:relative;z-index:1;width:min(650px,100%);padding:clamp(28px,7vw,58px) clamp(22px,6vw,52px);text-align:center;border:1px solid #ffc0df55;border-radius:28px;background:#1a1325c9;box-shadow:0 25px 90px #0008,0 0 65px #ff78b733;backdrop-filter:blur(8px)}
+.love-card .eyebrow{font:12px/1.5 Consolas,monospace;letter-spacing:.22em;color:#ffc0df;text-transform:uppercase}
+.big-heart{font-size:clamp(48px,10vw,76px);line-height:1.3;color:#ff8fc5;text-shadow:0 0 35px #ff78b7aa;animation:pulse 1.5s infinite}
+.love-card h2{font:600 clamp(34px,8vw,58px)/1.1 system-ui,sans-serif;color:#fff0f7;margin:10px 0 18px;letter-spacing:-.04em}
+.love-card p{font:16px/1.9 system-ui,sans-serif;color:#f5dce9;margin:12px auto;max-width:490px}
+.love-card .signature{font:italic 20px/1.5 Georgia,serif;color:#ffacd2;margin-top:28px}
+.love-card button{margin-top:26px;background:#ff8fc5;color:#35172b;border:0;font:600 13px system-ui,sans-serif;padding:12px 18px}
+.float-heart{position:absolute;bottom:-30px;color:#ffacd2;animation:rise linear forwards;pointer-events:none}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media(max-width:520px){body{padding:13px}.content{padding:20px 16px}.output{font-size:13px;min-height:250px}.inputrow{flex-wrap:wrap}.inputrow input{flex-basis:65%}.inputrow button{width:100%}.top{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+<div class="top"><span>PERSONAL PROJECT · BUILD 02.00</span><span class="badge">● SISTEMA EN LÍNEA</span></div>
+<section class="terminal"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>addy@mi-corazon: ~</span></div>
+<div class="content"><h1>Hola, <em>Addy.</em> <span class="heart">♥</span></h1>
+<p class="sub">He programado este pequeño espacio para ti. No necesitas saber código: escribe un comando o pulsa uno de los botones.</p>
+<div class="output" id="output" aria-live="polite">
+<div class="line sys">Iniciando sistema...</div><div class="line sys">Cargando cariño, paciencia y muchos abrazos virtuales...</div><div class="line good">Sistema listo. Usuario reconocido: ADDY.</div><div class="line dim">Escribe <span class="pink">ayuda</span> para descubrir qué puedes hacer.</div>
+</div>
+<form class="inputrow" id="commandForm"><span class="prompt">addy@corazon:~$</span><input id="command" autocomplete="off" placeholder="escribe aquí un comando..." aria-label="Escribe un comando"><button id="runBtn" type="submit">Ejecutar ↵</button></form>
+<div class="quick"><button type="button" data-cmd="amor">♥ amor</button><button type="button" data-cmd="abrazar">♡ abrazar</button><button type="button" data-cmd="sorpresa">✦ sorpresa</button><button type="button" data-cmd="futuro">⌂ futuro</button><button type="button" data-cmd="ayuda">? ayuda</button></div>
+<p class="hint">Pista: también puedes escribir <b>limpiar</b>. Y hay un comando especial que descubrirás cuando estés lista…</p></div></section>
+<p class="footer">Hecho con código, cariño y pensando en ti. <span class="heart">♥</span></p></main>
+<section id="romantic" class="hidden" aria-live="polite">
+<div class="love-card">
+<div class="eyebrow">proceso completado · destino: tú</div>
+<div class="big-heart">♥</div>
+<h2>Para ti, Addy</h2>
+<p>Entre tantas líneas de código, encontré una forma de decirte algo que no cabe en ninguna pantalla:</p>
+<p><strong>Te amo.</strong> Me encanta compartir mis días contigo, escucharte, conocerte cada vez más y encontrar motivos para imaginar un futuro juntos.</p>
+<p>Aunque hoy exista distancia entre nosotros, quiero que nunca dudes de lo importante que eres para mí. Si pudiera elegir un lugar al que llegar, sería a tu abrazo.</p>
+<p class="signature">Con todo mi cariño, para ti. ♥</p>
+<button id="again" type="button">Volver a la terminal</button>
+</div>
+</section>
+<script>
+const out=document.getElementById('output'),input=document.getElementById('command'),form=document.getElementById('commandForm');
+const messages={
+amor:['> Consultando la variable AMOR...','No existe una unidad de medida para lo que siento por ti.','Resultado: te amo muchísimo, Addy. ♥'],
+abrazar:['> Ejecutando función abrazar()...','(っ˘̩╭╮˘̩)っ','Imagina que este abrazo cruza toda la distancia y llega justo a ti. 🫂'],
+sorpresa:['> Abriendo archivo secreto...','Encontré algo que quería decirte:','Entre tantas cosas que puedo aprender y construir, una de mis favoritas es encontrar nuevas formas de recordarte cuánto te amo. ♥'],
+futuro:['> Consultando proyecto FUTURO...','Estado: en construcción.','Objetivo: seguir creciendo, cumplir nuestros sueños y crear muchos recuerdos juntos.','No tengo todo el código escrito, pero sí muchas ganas de construirlo contigo.'],
+ayuda:['> COMANDOS DISPONIBLES','amor     → muestra un mensaje de amor.','abrazar  → envía un abrazo virtual.','sorpresa → abre un mensaje secreto.','futuro   → consulta nuestro proyecto favorito.','teamo    → desbloquea el mensaje final.','limpiar  → limpia la terminal.','ayuda    → muestra esta lista.']
+};
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function addTypedLine(t,c=''){const d=document.createElement('div');d.className='line '+c;out.appendChild(d);for(const ch of t){d.textContent+=ch;out.scrollTop=out.scrollHeight;await wait(13)}}
+async function run(raw){
+ const cmd=raw.trim().toLowerCase();if(!cmd)return;
+ if(cmd==='teamo'){await addTypedLine('addy@corazon:~$ teamo','dim');await addTypedLine('> Coincidencia encontrada: eres alguien muy especial.','sys');await addTypedLine('Preparando una sorpresa solo para ti...','pink');await wait(900);showRomantic();return}
+ if(cmd==='limpiar'){out.innerHTML='';await addTypedLine('Terminal limpia. El cariño permanece. ♥','pink');return}
+ await addTypedLine('addy@corazon:~$ '+cmd,'dim');
+ const lines=messages[cmd]||['> Comando no reconocido.','Prueba con: amor, abrazar, sorpresa, futuro, ayuda o limpiar.'];
+ for(let i=0;i<lines.length;i++)await addTypedLine(lines[i],i===0?'sys':(cmd==='amor'||cmd==='sorpresa'?'pink':cmd==='abrazar'?'good':''));
+}
+let busy=false;
+async function execute(value){if(busy)return;busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);await run(value);document.querySelectorAll('button').forEach(b=>b.disabled=false);busy=false;input.focus()}
+form.addEventListener('submit',e=>{e.preventDefault();const v=input.value;input.value='';execute(v)});
+document.querySelectorAll('[data-cmd]').forEach(b=>b.addEventListener('click',()=>execute(b.dataset.cmd)));
+function showRomantic(){document.getElementById('main').classList.add('hidden');const screen=document.getElementById('romantic');screen.classList.remove('hidden');for(let i=0;i<18;i++){const h=document.createElement('span');h.className='float-heart';h.textContent=Math.random()>.5?'♥':'♡';h.style.left=Math.random()*100+'%';h.style.animationDuration=(5+Math.random()*6)+'s';h.style.fontSize=(12+Math.random()*22)+'px';h.style.animationDelay=(Math.random()*3)+'s';screen.appendChild(h)}}
+document.getElementById('again').addEventListener('click',()=>{document.getElementById('romantic').classList.add('hidden');document.getElementById('main').classList.remove('hidden');document.querySelectorAll('.float-heart').forEach(h=>h.remove());out.innerHTML='';addTypedLine('Sistema listo otra vez. La sorpresa sigue siendo tuya. ♥','pink')});
+</script>
+</body></html>
